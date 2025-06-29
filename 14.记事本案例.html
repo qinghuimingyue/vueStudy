@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>记事本</title>
+</head>
+
+<body>
+  <h1>
+    小黑记事本
+  </h1>
+  <div id="app">
+    <span><input @keyup.enter="add()" type="text" name="" id="" v-model="addMission"></span>
+    <span><button @click="add()" @keyup.enter="add()">添加任务</button></span>
+    <ol>
+      <li v-for="(item,index) in missions" :key="index">
+        <span>{{item}}</span>
+        <span><button @click="del(index)">×</button></span>
+      </li>
+
+    </ol>
+    合计：{{missions.length}}
+    <button @click="delAll">清空任务</button>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        missions: [
+          "跑步锻炼20分钟",
+          "复习数组语法"
+        ],
+        addMission: ""
+      },
+      methods: {
+        add() {
+          if (this.addMission != "") {
+            this.missions.push(this.addMission)
+            this.addMission = ""
+          }
+
+        },
+        del(index) {
+          this.missions = this.missions.filter((item, i) => {
+            return i !== index
+          })
+        },
+        delAll() {
+          this.missions = []
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
