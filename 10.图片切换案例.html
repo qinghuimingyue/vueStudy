@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图片切换案例</title>
+</head>
+
+<body>
+  <div id="app">
+    <button v-show="count<arr.length-1" @click="count++">按钮</button>
+    <img :src="arr[count]" alt="">
+  </div>
+  <script src="vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        count: 0,
+        arr: [
+          "https://pic1.zhimg.com/v2-a58fa2ab84be291418da2652805f8270_b.jpg",
+          "https://img.ixintu.com/download/jpg/201911/e25b904bc42a74d7d77aed81e66d772c.jpg!con",
+          "https://img95.699pic.com/photo/50067/8224.jpg_wh860.jpg",
+          "https://ts1.tc.mm.bing.net/th/id/R-C.d88442788ee5a458d50e40f0a8cb1e05?rik=EoPp8GhejYeQfw&riu=http%3a%2f%2fimg.pconline.com.cn%2fimages%2fupload%2fupc%2ftx%2fwallpaper%2f1307%2f10%2fc2%2f23151595_1373424485102.jpg&ehk=J7xq%2f50bCmdD4jUXfnTlau2s5WiVsBxQArAjvJzqIo4%3d&risl=&pid=ImgRaw&r=0"
+        ],
+        url: "https://img.ixintu.com/download/jpg/201911/e25b904bc42a74d7d77aed81e66d772c.jpg!con"
+      },
+      methods: {
+        change() {
+          this.url = this.arr[count++];
+          if (count == this.arr.length) {
+            count = 0;
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
