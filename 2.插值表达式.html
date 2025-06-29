@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>插值表达式</title>
+</head>
+
+<body>
+  <div id="app">
+    <p>{{ msg }}&nbsp;</p>
+    {{ msg + " 这是加法" }}&nbsp;
+    {{ msg.toUpperCase() }}
+    <p>{{age>20?"成年人":"未成年人"}}</p>
+    <p>{{ friend.age + friend.name }}</p>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        msg: "这是一个插值表达式",
+        age: "18",
+        friend: {
+          name: "牛逼",
+          age: "3"
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

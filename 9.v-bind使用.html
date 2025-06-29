@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v-bind使用</title>
+</head>
+
+<body>
+  <div id="app">
+    <!--v-bind和:一样-->
+    <img :src="url" alt="">
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        url: "https://ts1.tc.mm.bing.net/th/id/OIP-C.tHAIAaw4ZNlr4v2ldAkvYwHaHa?w=133&h=180&c=8&rs=1&qlt=90&o=6&dpr=1.7&pid=3.1&rm=2"
+      }
+    })
+  </script>
+</body>
+
+</html>

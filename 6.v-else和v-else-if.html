@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v-else和v-else-if</title>
+</head>
+
+<body>
+  <div id="app">
+    <p v-if="gender===1">
+      我是男
+    </p>
+    <p v-else>
+      我是女
+    </p>
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        gender: 1
+      }
+    })
+  </script>
+</body>
+
+</html>

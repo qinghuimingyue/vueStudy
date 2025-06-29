@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue指令</title>
+</head>
+
+<body>
+  <div id="app">
+    {{ msg }}
+    <div v-html="msg"></div>
+  </div>
+  <script src="vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        msg: '<a href="https://www.douyin.com/">抖音</a>'
+      }
+    })
+  </script>
+</body>
+
+</html>

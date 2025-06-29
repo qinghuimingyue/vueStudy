@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v-on注册事件</title>
+</head>
+
+<body>
+  <div id="app">
+    <div>
+      <button @click="count++">
+        +
+      </button>
+      {{count}}
+      <button v-on:click="count--">
+        -
+      </button>
+      <p>当前数值:{{count}}</p>
+    </div>
+
+    <div>
+      <button @click=change>切换</button>
+      <p v-show="flag">通过按钮隐藏/显示</p>
+    </div>
+
+  </div>
+
+  <script src="vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        count: 0,
+        flag: true
+      },
+
+      methods: {
+        change() {
+          console.log("按按钮执行切换可见度逻辑");
+          this.flag = !this.flag;
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
